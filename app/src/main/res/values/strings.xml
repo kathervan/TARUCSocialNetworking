@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TARUC Social Networking</string>
+    <string name="title_activity_test">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_friendlist">Friend List</string>
+    <string name="add">add</string>
+    <string name="friendlist">Friend List</string>
+    <string name="title_interest_field">Interest Field</string>
+    <string name="chatlog">Chat Log</string>
+</resources>

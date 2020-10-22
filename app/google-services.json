@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "446715585273",
+    "firebase_url": "https://taruc-social-networking.firebaseio.com",
+    "project_id": "taruc-social-networking",
+    "storage_bucket": "taruc-social-networking.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:446715585273:android:c8137b1428910591edb828",
+        "android_client_info": {
+          "package_name": "com.example.tarucsocialnetworking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "446715585273-logquuprdn03fuhuigihg9mnd8uti5t4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAr_It3YxM3f6zRCuf9Lc3rRY079CqRAqA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "446715585273-logquuprdn03fuhuigihg9mnd8uti5t4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

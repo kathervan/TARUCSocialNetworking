@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "937629163599",
+    "firebase_url": "https://taruc-social-networking-3b773.firebaseio.com",
+    "project_id": "taruc-social-networking-3b773",
+    "storage_bucket": "taruc-social-networking-3b773.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:937629163599:android:9a2324d99cc81cb20aca3a",
+        "android_client_info": {
+          "package_name": "com.example.tarucsocialnetworking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "937629163599-5lnjrnjr2h61dk9lhj6lluue1l2kgcs5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tarucsocialnetworking",
+            "certificate_hash": "0866482ba98f6297c2edb0cd71fb6012d67903c2"
+          }
+        },
+        {
+          "client_id": "937629163599-p1eb874tntpdjk4hqtsq2sm4lodrtt9h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqMpouCCJ_CUhK9JGlsD9_HSUAAeCxSrQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "937629163599-p1eb874tntpdjk4hqtsq2sm4lodrtt9h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
