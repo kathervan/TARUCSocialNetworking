@@ -1,26 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".InterestFieldActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
+
+    <Button
+        android:id="@+id/btnArt"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_marginTop="32dp"
+        android:text="Art"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:titleTextColor="@color/white"
-            app:subtitleTextColor="@color/white"
-            android:theme="?attr/actionBarTheme"
-            app:popupTheme="@style/AppTheme.PopupOverlay"
-            android:background="?attr/colorPrimary" />
+    <Button
+        android:id="@+id/btnAnimal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Animal"
+        app:layout_constraintEnd_toEndOf="@+id/btnArt"
+        app:layout_constraintStart_toStartOf="@+id/btnArt"
+        app:layout_constraintTop_toBottomOf="@+id/btnArt" />
 
-    </com.google.android.material.appbar.AppBarLayout>
+    <Button
+        android:id="@+id/btnGaming"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Gaming"
+        app:layout_constraintEnd_toEndOf="@+id/btnAnimal"
+        app:layout_constraintStart_toStartOf="@+id/btnAnimal"
+        app:layout_constraintTop_toBottomOf="@+id/btnAnimal" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <Button
+        android:id="@+id/btnHistory"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="History"
+        app:layout_constraintEnd_toEndOf="@+id/btnGaming"
+        app:layout_constraintStart_toStartOf="@+id/btnGaming"
+        app:layout_constraintTop_toBottomOf="@+id/btnGaming" />
+
+    <Button
+        android:id="@+id/btnMusic"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Music"
+        app:layout_constraintEnd_toEndOf="@+id/btnHistory"
+        app:layout_constraintStart_toStartOf="@+id/btnHistory"
+        app:layout_constraintTop_toBottomOf="@+id/btnHistory" />
+
+    <Button
+        android:id="@+id/btnNature"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Nature"
+        app:layout_constraintEnd_toEndOf="@+id/btnMusic"
+        app:layout_constraintStart_toStartOf="@+id/btnMusic"
+        app:layout_constraintTop_toBottomOf="@+id/btnMusic" />
+
+    <Button
+        android:id="@+id/btnTravel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Travel"
+        app:layout_constraintEnd_toEndOf="@+id/btnNature"
+        app:layout_constraintStart_toStartOf="@+id/btnNature"
+        app:layout_constraintTop_toBottomOf="@+id/btnNature" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

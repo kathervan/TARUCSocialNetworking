@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".ProfileActivity">
+
+
+    <EditText
+        android:id="@+id/editText_profile_user_name"
+        android:layout_width="336dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_edittext_filled"
+        android:ems="10"
+        android:hint="Enter your id name"
+        android:inputType="textPersonName"
+        android:paddingLeft="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/selectphoto_button_profile"
+        app:layout_constraintStart_toStartOf="@+id/selectphoto_button_profile"
+        app:layout_constraintTop_toBottomOf="@+id/selectphoto_button_profile" />
+
+    <EditText
+        android:id="@+id/editText_profile_phone_no"
+        android:layout_width="336dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_edittext_filled"
+        android:ems="10"
+        android:hint="Enter your phone number"
+        android:inputType="textPersonName"
+        android:paddingLeft="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/editText_profile_user_name"
+        app:layout_constraintStart_toStartOf="@+id/editText_profile_user_name"
+        app:layout_constraintTop_toBottomOf="@+id/editText_profile_user_name" />
+
+    <EditText
+        android:id="@+id/editText_profile_current_password"
+        android:layout_width="336dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_edittext_filled"
+        android:ems="10"
+        android:hint="Enter current password"
+        android:inputType="textPersonName"
+        android:paddingLeft="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/editText_profile_phone_no"
+        app:layout_constraintStart_toStartOf="@+id/editText_profile_phone_no"
+        app:layout_constraintTop_toBottomOf="@+id/editText_profile_phone_no" />
+
+    <EditText
+        android:id="@+id/editText_profile_new_password"
+        android:layout_width="336dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_edittext_filled"
+        android:ems="10"
+        android:hint="Enter new password"
+        android:inputType="textPersonName"
+        android:paddingLeft="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/editText_profile_current_password"
+        app:layout_constraintStart_toStartOf="@+id/editText_profile_current_password"
+        app:layout_constraintTop_toBottomOf="@+id/editText_profile_current_password" />
+
+    <EditText
+        android:id="@+id/editText_profile_reenter_password"
+        android:layout_width="336dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_edittext_filled"
+        android:ems="10"
+        android:hint="Re-enter the password"
+        android:inputType="textPersonName"
+        android:paddingLeft="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/editText_profile_new_password"
+        app:layout_constraintStart_toStartOf="@+id/editText_profile_new_password"
+        app:layout_constraintTop_toBottomOf="@+id/editText_profile_new_password" />
+
+    <Button
+        android:id="@+id/btn_change_password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Save"
+        android:background="@drawable/custom_button"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/editText_profile_reenter_password"
+        app:layout_constraintStart_toStartOf="@+id/editText_profile_reenter_password"
+        app:layout_constraintTop_toBottomOf="@+id/editText_profile_reenter_password" />
+
+    <Button
+        android:id="@+id/btn_delete_account"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Delete Account"
+        android:background="@drawable/cancel_button"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/btn_change_password"
+        app:layout_constraintStart_toStartOf="@+id/btn_change_password"
+        app:layout_constraintTop_toBottomOf="@+id/btn_change_password" />
+
+
+    <Button
+        android:id="@+id/selectphoto_button_profile"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_select_photo"
+        android:text="Select Photo"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/selectphoto_imageview_profile"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:civ_border_width="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/selectphoto_button_profile"
+        app:layout_constraintEnd_toEndOf="@+id/selectphoto_button_profile"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/selectphoto_button_profile"
+        app:layout_constraintTop_toTopOf="@+id/selectphoto_button_profile" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -112,7 +112,7 @@
         android:id="@+id/buttonRegister"
         android:layout_width="330dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="32dp"
         android:background="@drawable/custom_button"
         android:text="Register"
         android:textColor="#FFFFFF"
@@ -124,7 +124,7 @@
         android:id="@+id/textViewAlreadyHaveAnAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="48dp"
         android:text="Already have an account?"
         android:textColor="@color/white"
         android:textSize="16sp"
@@ -137,8 +137,7 @@
         android:id="@+id/selectphoto_button_register"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/rounded_select_photo"
         android:text="Select Photo"
         android:textColor="@color/black"
@@ -156,6 +155,7 @@
         app:layout_constraintEnd_toEndOf="@+id/selectphoto_button_register"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/selectphoto_button_register"
-        app:layout_constraintTop_toTopOf="@+id/selectphoto_button_register" />
+        app:layout_constraintTop_toTopOf="@+id/selectphoto_button_register"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

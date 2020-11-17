@@ -4,29 +4,25 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.Menu
-import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
 import com.squareup.picasso.Picasso
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_friend_list.*
-import kotlinx.android.synthetic.main.activity_interest_field.*
-import kotlinx.android.synthetic.main.user_row_friend_list.view.*
+import kotlinx.android.synthetic.main.user_row.view.*
 
 class FriendListActivity : AppCompatActivity() {
+
+    //lateinit var option : Spinner
+    //lateinit var result : TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_friend_list)
-
-        //val adapter = GroupAdapter<ViewHolder>()
-
-        //adapter.add(UserItem())
-        //recyclerview_friendlist.adapter = adapter
 
         recyclerview_friendlist.adapter
         recyclerview_friendlist.layoutManager = LinearLayoutManager(this)
@@ -34,21 +30,41 @@ class FriendListActivity : AppCompatActivity() {
         fetchUsers()
     }
 
+    companion object {
+        val USER_KEY = "USER_KEY"
+    }
+
+    var toUser: User? = null
+
     private fun fetchUsers(){
+        // get current user
+        val fromId = FirebaseAuth.getInstance().uid
+        val toId = toUser?.uid
+        val firebase: FirebaseUser = FirebaseAuth.getInstance().currentUser!!
+        //FirebaseDatabase.getInstance().getReference("/users-friend/$fromId")
         FirebaseDatabase.getInstance().getReference("/users")
             .ref.addListenerForSingleValueEvent(object: ValueEventListener{
+
                 override fun onDataChange(snapshot: DataSnapshot) {
                     val adapter = GroupAdapter<ViewHolder>()
+
                     snapshot.children.forEach{
                         Log.d("FriendList", it.toString())
+                        //val user = it.getValue(FriendList::class.java)
                         val user = it.getValue(User::class.java)
+
                         if (user != null) {
                             adapter.add(UserItem(user))
                         }
                     }
 
                     adapter.setOnItemClickListener{item, view->
+
+                        val friendItem = item as UserItem
+
                         val intent = Intent(view.context, ChatLogActivity::class.java)
+                        //intent.putExtra(USER_KEY, userItem.user.username)
+                        intent.putExtra(USER_KEY, friendItem.user)
                         startActivity(intent)
 
                         finish()
@@ -65,6 +81,7 @@ class FriendListActivity : AppCompatActivity() {
     }
 }
 
+//class FriendItem(val user: FriendList): Item<ViewHolder>(){
 class UserItem(val user: User): Item<ViewHolder>(){
 
     override fun bind(viewHolder: ViewHolder, position: Int) {
@@ -74,6 +91,6 @@ class UserItem(val user: User): Item<ViewHolder>(){
     }
 
     override fun getLayout(): Int {
-        return R.layout.user_row_friend_list
+        return R.layout.friend_list_row
     }
 }
