@@ -61,11 +61,11 @@ class InterestFieldActivity : AppCompatActivity() {
             val username = currentUser!!.username
 
             val ref = FirebaseDatabase.getInstance().getReference("users-interest/$subject").child(uid)
-            val interestUser = InterestUser(uid, username,uri)
+            val interestUser =  User(uid, username,uri, currentUser!!.userPhoneNo)
 
             ref.setValue(interestUser)
                 .addOnSuccessListener {
-                    Toast.makeText(this, "Successful", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Successfully registered", Toast.LENGTH_SHORT).show()
                 }
                 .addOnFailureListener{
                     Toast.makeText(this, "Fail ", Toast.LENGTH_SHORT).show()
@@ -84,11 +84,11 @@ class InterestFieldActivity : AppCompatActivity() {
             val username = currentUser!!.username
 
             val ref = FirebaseDatabase.getInstance().getReference("users-interest/$subject").child(uid)
-            val interestUser = InterestUser(uid, username,uri)
+            val interestUser =  User(uid, username,uri, currentUser!!.userPhoneNo)
 
             ref.setValue(interestUser)
                 .addOnSuccessListener {
-                    Toast.makeText(this, "Successful", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Successfully registered", Toast.LENGTH_SHORT).show()
                 }
                 .addOnFailureListener{
                     Toast.makeText(this, "Fail ", Toast.LENGTH_SHORT).show()
@@ -107,11 +107,11 @@ class InterestFieldActivity : AppCompatActivity() {
             val username = currentUser!!.username
 
             val ref = FirebaseDatabase.getInstance().getReference("users-interest/$subject").child(uid)
-            val interestUser = InterestUser(uid, username,uri)
+            val interestUser =  User(uid, username,uri, currentUser!!.userPhoneNo)
 
             ref.setValue(interestUser)
                 .addOnSuccessListener {
-                    Toast.makeText(this, "Successful", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Successfully registered", Toast.LENGTH_SHORT).show()
                 }
                 .addOnFailureListener{
                     Toast.makeText(this, "Fail ", Toast.LENGTH_SHORT).show()
@@ -130,11 +130,11 @@ class InterestFieldActivity : AppCompatActivity() {
             val username = currentUser!!.username
 
             val ref = FirebaseDatabase.getInstance().getReference("users-interest/$subject").child(uid)
-            val interestUser = InterestUser(uid, username,uri)
+            val interestUser = User(uid, username,uri, currentUser!!.userPhoneNo)
 
             ref.setValue(interestUser)
                 .addOnSuccessListener {
-                    Toast.makeText(this, "Successful", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Successfully registered", Toast.LENGTH_SHORT).show()
                 }
                 .addOnFailureListener{
                     Toast.makeText(this, "Fail ", Toast.LENGTH_SHORT).show()
@@ -153,11 +153,11 @@ class InterestFieldActivity : AppCompatActivity() {
             val username = currentUser!!.username
 
             val ref = FirebaseDatabase.getInstance().getReference("users-interest/$subject").child(uid)
-            val interestUser = InterestUser(uid, username,uri)
+            val interestUser = User(uid, username,uri, currentUser!!.userPhoneNo)
 
             ref.setValue(interestUser)
                 .addOnSuccessListener {
-                    Toast.makeText(this, "Successful", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Successfully registered", Toast.LENGTH_SHORT).show()
                 }
                 .addOnFailureListener{
                     Toast.makeText(this, "Fail ", Toast.LENGTH_SHORT).show()
@@ -176,11 +176,11 @@ class InterestFieldActivity : AppCompatActivity() {
             subject = "Nature"
 
             val ref = FirebaseDatabase.getInstance().getReference("users-interest/$subject").child(uid)
-            val interestUser = InterestUser(uid, username, uri)
+            val interestUser =  User(uid, username,uri, currentUser!!.userPhoneNo)
 
             ref.setValue(interestUser)
                 .addOnSuccessListener {
-                    Toast.makeText(this, "Successful", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Successfully registered", Toast.LENGTH_SHORT).show()
                 }
                 .addOnFailureListener{
                     Toast.makeText(this, "Fail ", Toast.LENGTH_SHORT).show()
@@ -199,11 +199,11 @@ class InterestFieldActivity : AppCompatActivity() {
             val username = currentUser!!.username
 
             val ref = FirebaseDatabase.getInstance().getReference("users-interest/$subject").child(uid)
-            val interestUser = InterestUser(uid, username,uri)
+            val interestUser = User(uid, username,uri, currentUser!!.userPhoneNo)
 
             ref.setValue(interestUser)
                 .addOnSuccessListener {
-                    Toast.makeText(this, "Successful", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Successfully registered", Toast.LENGTH_SHORT).show()
                 }
                 .addOnFailureListener{
                     Toast.makeText(this, "Fail ", Toast.LENGTH_SHORT).show()
@@ -264,8 +264,8 @@ class InterestFieldActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 }
-
+/*
 @Parcelize
-class InterestUser(val uid:String, val username : String ,val profileImage: String): Parcelable {
+class InterestUser(val uid: String, val username : String ,val profileImage: String): Parcelable {
     constructor() : this("","","")
-}
+}*/

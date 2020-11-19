@@ -61,16 +61,16 @@ class UserListActivity : AppCompatActivity() {
     private fun fetchUsers(){
         val firebase: FirebaseUser = FirebaseAuth.getInstance().currentUser!!
 
-        //val subject = intent.getStringExtra("Subject")
+        val subject = intent.getStringExtra("Subject")
 
-        //FirebaseDatabase.getInstance().getReference("/users-interest/$subject")
-        FirebaseDatabase.getInstance().getReference("/users")
+        FirebaseDatabase.getInstance().getReference("/users-interest/$subject")
+        //FirebaseDatabase.getInstance().getReference("/users")
             .ref.addListenerForSingleValueEvent(object: ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     val adapter = GroupAdapter<ViewHolder>()
                     snapshot.children.forEach{
-                        //val user = it.getValue(InterestUser::class.java)
                         val user = it.getValue(User::class.java)
+                        //val user = it.getValue(User::class.java)
                         if (user!!.uid != (firebase.uid)) {
                         //if(user != null){
                             adapter.add(UserItem(user))
@@ -96,8 +96,8 @@ class UserListActivity : AppCompatActivity() {
             })
     }
 
-    //class UserItem(val user: InterestUser): Item<ViewHolder>(){
     class UserItem(val user: User): Item<ViewHolder>(){
+    //class UserItem(val user: User): Item<ViewHolder>(){
         override fun bind(viewHolder: ViewHolder, position: Int) {
             viewHolder.itemView.username_textview_friend_list.text = user.username
 

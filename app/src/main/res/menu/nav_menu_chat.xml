@@ -8,6 +8,11 @@
         android:title="Add"
         app:showAsAction="ifRoom"
         />
+    <item
+        android:id="@+id/menu_remove"
+        android:title="Remove"
+        app:showAsAction="ifRoom"
+        />
 
     <item android:id="@+id/menu_Friend_List"
         android:title="Friend List"

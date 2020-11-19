@@ -17,6 +17,7 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import com.example.tarucsocialnetworking.InterestFieldActivity.Companion.currentUser
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot
@@ -34,6 +35,8 @@ import kotlinx.coroutines.*
 import java.sql.Time
 
 class ChatLogActivity : AppCompatActivity() {
+
+    private lateinit var auth : FirebaseAuth
 
     companion object {
         val TAG = "ChatLog"
@@ -83,7 +86,7 @@ class ChatLogActivity : AppCompatActivity() {
                 if(chatMessage != null) {
                     Log.d(TAG, chatMessage.text)
 
-                    val currentUser = InterestFieldActivity.currentUser ?: return
+                    val currentUser = currentUser ?: return
 
                     if(chatMessage.fromId == FirebaseAuth.getInstance().uid) {
                         adapter.add(ChatFromItem(chatMessage.text, currentUser))
@@ -114,6 +117,7 @@ class ChatLogActivity : AppCompatActivity() {
     private fun performSendMessage(){
         val text = editText_chat_log.text.toString()
         val fromId = FirebaseAuth.getInstance().uid
+        //val user = intent.getParcelableExtra<User>(FriendListActivity.USER_KEY)
         val user = intent.getParcelableExtra<User>(UserListActivity.USER_KEY)
         val toId = user.uid
 
@@ -162,27 +166,41 @@ class ChatLogActivity : AppCompatActivity() {
                 notify(notificationId, builder.build())
             }
         }
-
-
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item?.itemId) {
             R.id.menu_add -> {
-                val uid = FirebaseAuth.getInstance().uid ?: ""
                 val uri = toUser!!.profileImage
-                val toUsername = toUser!!.username
-                val ref = FirebaseDatabase.getInstance().getReference("/users-friend/$uid").push()
-                val friendList = FriendList(uid, toUsername, uri)
+                val username = toUser!!.username
+                val ref = FirebaseDatabase.getInstance().getReference("users-friend").child(toUser!!.uid)
+                //val friendList = FriendList(uid, toUsername, uri)
+                val friendList =  User(toUser!!.uid, username,uri, toUser!!.userPhoneNo)
 
                 ref.setValue(friendList)
                     .addOnSuccessListener {
-                        Toast.makeText(this, "Successful add", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Successfully add to friend list", Toast.LENGTH_SHORT).show()
                     }
                     .addOnFailureListener{
-                        Toast.makeText(this, "Fail to add friend", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Fail to add friend from friend list", Toast.LENGTH_SHORT).show()
                     }
 
+                val intent = Intent(this, InterestFieldActivity::class.java)
+                startActivity(intent)
+
+            }
+            R.id.menu_remove -> {
+                val toId = toUser!!.uid
+                FirebaseDatabase.getInstance().getReference("users-friend").child(toId).removeValue()
+                    .addOnSuccessListener {
+                        Toast.makeText(this, "Successfully remove from friend list", Toast.LENGTH_SHORT).show()
+                    }
+                    .addOnFailureListener{
+                        Toast.makeText(this, "Fail to remove friend from friend list", Toast.LENGTH_SHORT).show()
+                    }
+
+                val intent = Intent(this, InterestFieldActivity::class.java)
+                startActivity(intent)
             }
             R.id.menu_Friend_List -> {
                 val intent = Intent(this, FriendListActivity::class.java)
@@ -245,7 +263,8 @@ class ChatToItem(val text: String, val user: User): Item<ViewHolder>(){
         return R.layout.chat_to_row
     }
 }
+/*
 @Parcelize
 class FriendList(val uid:String, val username: String, val profileImage: String): Parcelable{
     constructor() : this("","","")
-}
+}*/
